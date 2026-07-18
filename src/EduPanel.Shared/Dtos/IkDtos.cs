@@ -17,11 +17,13 @@ public enum OnayDurumu
 
 public record PersonelDto(
     Guid Id, string AdSoyad, string? TcNo, string? Telefon, string? Eposta,
-    string? Pozisyon, DateTime IseGiris, DateTime? Cikis, Guid? KullaniciId, string? Notlar);
+    string? Pozisyon, DateTime IseGiris, DateTime? Cikis, Guid? KullaniciId, string? Notlar,
+    Guid? SubeId);
 
 public record PersonelKaydetIstek(
     string AdSoyad, string? TcNo, string? Telefon, string? Eposta,
-    string? Pozisyon, DateTime IseGiris, DateTime? Cikis, Guid? KullaniciId, string? Notlar);
+    string? Pozisyon, DateTime IseGiris, DateTime? Cikis, Guid? KullaniciId, string? Notlar,
+    Guid? SubeId);
 
 public record BelgeDto(
     Guid Id, string Tur, string DosyaAdi, long Boyut, DateTime? GecerlilikSonu, DateTime YuklemeTarihi);

@@ -23,10 +23,16 @@ public record KullaniciDto(
     string AdSoyad,
     Guid RolId,
     string RolAdi,
-    bool Aktif);
+    bool Aktif,
+    Guid? SubeId,
+    string? SubeAdi);
 
-public record KullaniciOlusturIstek(string Eposta, string AdSoyad, string Sifre, Guid RolId);
+public record KullaniciOlusturIstek(string Eposta, string AdSoyad, string Sifre, Guid RolId, Guid? SubeId);
 
-public record KullaniciGuncelleIstek(string AdSoyad, Guid RolId, bool Aktif);
+public record KullaniciGuncelleIstek(string AdSoyad, Guid RolId, bool Aktif, Guid? SubeId);
+
+/// <summary>Denetim günlüğü satırı: kim, ne zaman, hangi kayıtta ne yaptı.</summary>
+public record DenetimSatiri(
+    DateTime Zaman, string KullaniciAdi, string Eylem, string Varlik, Guid VarlikId, string? Ozet);
 
 public record SifreSifirlaIstek(string YeniSifre);
