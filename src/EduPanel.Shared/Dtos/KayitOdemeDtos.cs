@@ -70,3 +70,11 @@ public record BorcSatiriDto(
 public record KasaSatiriDto(
     string OgrenciAdi, string EgitimAdi, decimal Tutar, OdemeYontemi Yontem,
     string AlanAdi, string? MakbuzNo, DateTime Tarih);
+
+/// <summary>Çift açılan öğrenci kartını hedefe taşır: kayıtları hedefe geçer, kaynak silinir.</summary>
+public record OgrenciBirlestirIstek(Guid KaynakOgrenciId);
+
+/// <summary>Sertifikalandıran kuruma gönderilecek dönem listesi satırı.</summary>
+public record KurumListesiSatiri(
+    string OgrenciAdi, string? TcNo, string Telefon, string EgitimAdi,
+    DateTime KayitTarihi, SertifikaDurumu SertifikaDurumu);
