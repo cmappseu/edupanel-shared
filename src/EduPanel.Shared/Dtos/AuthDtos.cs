@@ -4,7 +4,10 @@ public record GirisIstek(string KurumKodu, string Eposta, string Sifre);
 
 public record YenilemeIstek(string KurumKodu, string RefreshToken);
 
-/// <summary>Izinler: "Anahtar:Kapsam" biçiminde, ör. "Maas.Goruntule:SadeceKendisi".</summary>
+/// <summary>
+/// Izinler: "Anahtar:Kapsam" biçiminde, ör. "Maas.Goruntule:SadeceKendisi".
+/// LisansliModuller: kurumun satın aldığı modüller; menü = lisans ∩ izin.
+/// </summary>
 public record GirisYanit(
     string AccessToken,
     string RefreshToken,
@@ -14,4 +17,7 @@ public record GirisYanit(
     string Rol,
     string KurumKodu,
     string KurumAdi,
-    List<string> Izinler);
+    List<string> Izinler,
+    List<string> LisansliModuller,
+    bool PlatformYonetici,
+    string? VurguRenk);
