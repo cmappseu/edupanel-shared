@@ -30,7 +30,8 @@ public record OgrenciGuncelleIstek(string AdSoyad, string? TcNo, string? Eposta,
 
 public record KayitOzetDto(
     Guid Id, string EgitimAdi, decimal AnlasilanUcret, decimal Odenen, decimal Kalan,
-    SertifikaDurumu SertifikaDurumu, bool IptalEdildi, DateTime KayitTarihi);
+    SertifikaDurumu SertifikaDurumu, bool IptalEdildi, DateTime KayitTarihi,
+    string? BelgeNo = null, DateTime? BelgeVerilis = null, DateTime? BelgeGecerlilikSonu = null);
 
 public record OgrenciDetayDto(OgrenciDto Ogrenci, List<KayitOzetDto> Kayitlar);
 
@@ -73,6 +74,17 @@ public record KasaSatiriDto(
 
 /// <summary>Çift açılan öğrenci kartını hedefe taşır: kayıtları hedefe geçer, kaynak silinir.</summary>
 public record OgrenciBirlestirIstek(Guid KaynakOgrenciId);
+
+/// <summary>Basılan belgenin künyesi; geçerlilik boş bırakılırsa eğitimin süresinden hesaplanır.</summary>
+public record SertifikaKaydetIstek(string BelgeNo, DateTime Verilis, DateTime? GecerlilikSonu);
+
+public record SertifikaDto(
+    Guid Id, Guid KayitId, string BelgeNo, DateTime Verilis, DateTime? GecerlilikSonu);
+
+/// <summary>Geçerliliği dolan/dolmak üzere olan belge — yenileme araması fırsatı.</summary>
+public record YenilemeFirsatiDto(
+    Guid KayitId, Guid OgrenciId, string OgrenciAdi, string Telefon, string EgitimAdi,
+    string BelgeNo, DateTime GecerlilikSonu, int KalanGun, bool SuresiDoldu);
 
 /// <summary>Sertifikalandıran kuruma gönderilecek dönem listesi satırı.</summary>
 public record KurumListesiSatiri(
