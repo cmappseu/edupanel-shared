@@ -32,6 +32,8 @@ public record PrimSatirDto(
 
 public record PrimBordroIstek(Guid PersonelId, string Donem);
 
+public record BordroEpostaIstek(string Donem);
+
 public record BelgeDto(
     Guid Id, string Tur, string DosyaAdi, long Boyut, DateTime? GecerlilikSonu, DateTime YuklemeTarihi);
 
