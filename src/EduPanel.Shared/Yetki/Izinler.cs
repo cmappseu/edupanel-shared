@@ -51,6 +51,9 @@ public static class Izinler
     // Kurum ayarları
     public const string AyarlarKurumOzellestir = "Ayarlar.KurumOzellestir";
 
+    // Duyurular (kullanıcılara düşen bildirimler)
+    public const string DuyurularYonet = "Duyurular.Yonet";
+
     /// <summary>Sistemdeki tüm izin anahtarları (yansımayla sabitlerden üretilir).</summary>
     public static IReadOnlyList<string> Tumu { get; } = typeof(Izinler)
         .GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
