@@ -36,3 +36,8 @@ public record DenetimSatiri(
     DateTime Zaman, string KullaniciAdi, string Eylem, string Varlik, Guid VarlikId, string? Ozet);
 
 public record SifreSifirlaIstek(string YeniSifre);
+
+/// <summary>Webhook günlüğü satırı; hatalı olanlar ham gövdeden yeniden işlenebilir.</summary>
+public record WebhookGunlukSatiri(
+    Guid Id, DateTime Zaman, string Sonuc, bool Basarili, string? Telefon,
+    Guid? BasvuruId, string? HamGovde, string? Hata, string? IstemciIp);
