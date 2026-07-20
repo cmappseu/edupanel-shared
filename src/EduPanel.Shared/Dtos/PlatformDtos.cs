@@ -18,7 +18,9 @@ public static class ModulKatalogu
 
 public record KurumOzetDto(
     Guid Id, string Kod, string Ad, bool Aktif, bool PlatformYoneticisiMi,
-    string? WebhookSecret, List<string> Moduller, DateTime OlusturmaTarihi);
+    string? WebhookSecret, List<string> Moduller, DateTime OlusturmaTarihi,
+    /// <summary>Aktif kullanıcı sınırı; null = sınırsız.</summary>
+    int? KullaniciLimiti = null);
 
 public record KurumOlusturIstek(
     string Kod, string Ad, string AdminEposta, string AdminSifre,
@@ -26,7 +28,8 @@ public record KurumOlusturIstek(
 
 public record KurumGuncelleIstek(string Ad, bool Aktif, string? WebhookSecret);
 
-public record LisansGuncelleIstek(List<string> Moduller);
+/// <summary>KullaniciLimiti null bırakılırsa kurumda kullanıcı sınırı olmaz.</summary>
+public record LisansGuncelleIstek(List<string> Moduller, int? KullaniciLimiti = null);
 
 // ── Kurum özelleştirme (her kurumun kendi ayarları) ──
 

@@ -24,6 +24,8 @@ public record BasvuruDto(
     bool PazarlamaIzni,
     Guid? VazgecmeNedeniId,
     string? VazgecmeNedeni,
+    Guid? EgitimId,
+    string? EgitimAdi,
     DateTime? SonAramaTarihi,
     DateTime? TekrarAramaTarihi,
     DateTime OlusturmaTarihi);
@@ -39,7 +41,9 @@ public record BasvuruDetayDto(BasvuruDto Basvuru, List<MesajDto> Mesajlar, List<
 /// <summary>Telefonla gelen başvurunun elle girilmesi için.</summary>
 public record BasvuruOlusturIstek(string Telefon, string? Ad, string? KaynakAdi, string? Mesaj);
 
-public record BasvuruGuncelleIstek(string? Ad, bool KvkkRiza, bool PazarlamaIzni);
+/// <summary>EgitimId: adayın ilgilendiği eğitim; kayda dönüştürürken hazır gelir.</summary>
+public record BasvuruGuncelleIstek(string? Ad, bool KvkkRiza, bool PazarlamaIzni,
+    Guid? EgitimId = null);
 
 public record AtamaIstek(Guid? KullaniciId);
 
