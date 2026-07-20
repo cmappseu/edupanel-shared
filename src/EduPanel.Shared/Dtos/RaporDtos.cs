@@ -26,7 +26,11 @@ public record HedefKaydetIstek(Guid KullaniciId, string Donem, int KayitHedefi, 
 
 // ── Bildirim merkezi / yönetici panosu ──
 
-public record BekleyenSatir(string Tur, string Baslik, string? Detay);
+/// <summary>Anahtar satırın kalıcı kimliğidir; "okundu" işareti bununla saklanır.</summary>
+public record BekleyenSatir(string Tur, string Baslik, string? Detay,
+    string Anahtar = "", bool Okundu = false);
+
+public record BildirimOkunduIstek(string Anahtar);
 
 /// <summary>Bölümler kullanıcının izinlerine göre dolar; izni olmayan bölüm null/0 kalır.</summary>
 public record PanoDto(
