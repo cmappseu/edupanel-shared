@@ -42,7 +42,8 @@ public record YeniKayitIstek(
 
 public record SertifikaGuncelleIstek(SertifikaDurumu Durum);
 
-public record KayitIptalIstek(string Gerekce, decimal IadeTutari, decimal Kesinti);
+/// <summary>Kesinti boş bırakılırsa kurumun tanımlı iade kesinti yüzdesi uygulanır.</summary>
+public record KayitIptalIstek(string Gerekce, decimal IadeTutari, decimal? Kesinti);
 
 // ── Ödeme / tahsilat ──
 

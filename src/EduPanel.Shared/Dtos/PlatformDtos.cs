@@ -35,4 +35,6 @@ public record KurumOzellestirmeDto(
     string? VurguRenk,
     string? MakbuzOnEk,
     decimal? IadeKesintiYuzde,
-    string? KvkkMetni);
+    string? KvkkMetni,
+    // Logo dosyası bu DTO ile taşınmaz; ayrı uçtan yüklenir/indirilir.
+    bool LogoVar = false);
