@@ -10,15 +10,6 @@ public enum BasvuruDurumu
     Vazgecti = 5
 }
 
-public enum VazgecmeNedeni
-{
-    Fiyat = 1,
-    Zamanlama = 2,
-    Rakip = 3,
-    Ilgisiz = 4,
-    Diger = 5
-}
-
 public record BasvuruDto(
     Guid Id,
     string Telefon,
@@ -31,7 +22,8 @@ public record BasvuruDto(
     DateTime? SonMesajTarihi,
     bool KvkkRiza,
     bool PazarlamaIzni,
-    VazgecmeNedeni? VazgecmeNedeni,
+    Guid? VazgecmeNedeniId,
+    string? VazgecmeNedeni,
     DateTime? SonAramaTarihi,
     DateTime? TekrarAramaTarihi,
     DateTime OlusturmaTarihi);
@@ -52,7 +44,7 @@ public record BasvuruGuncelleIstek(string? Ad, bool KvkkRiza, bool PazarlamaIzni
 public record AtamaIstek(Guid? KullaniciId);
 
 public record AramaEkleIstek(
-    string? Not, BasvuruDurumu YeniDurum, DateTime? TekrarAramaTarihi, VazgecmeNedeni? VazgecmeNedeni);
+    string? Not, BasvuruDurumu YeniDurum, DateTime? TekrarAramaTarihi, Guid? VazgecmeNedeniId);
 
 /// <summary>WhatsMod'un webhook'a POST edeceği sözleşme. İmza: HMAC-SHA256(gövde, kurum secret'ı) hex, X-Imza başlığında.</summary>
 public record WhatsModWebhookIstek(
