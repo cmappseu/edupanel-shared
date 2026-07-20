@@ -20,4 +20,6 @@ public record GirisYanit(
     List<string> Izinler,
     List<string> LisansliModuller,
     bool PlatformYonetici,
-    string? VurguRenk);
+    string? VurguRenk,
+    /// <summary>Mesajlaşmada "bu mesaj bana mı ait" ayrımı için gerekir.</summary>
+    Guid KullaniciId = default);
