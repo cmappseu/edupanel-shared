@@ -54,6 +54,9 @@ public static class Izinler
     // Duyurular (kullanıcılara düşen bildirimler)
     public const string DuyurularYonet = "Duyurular.Yonet";
 
+    // Mesaj gözetimi: tüm kullanıcıların yazışmalarını görüntüleme (yönetici)
+    public const string MesajlarGozetimi = "Mesajlar.Gozetim";
+
     /// <summary>Sistemdeki tüm izin anahtarları (yansımayla sabitlerden üretilir).</summary>
     public static IReadOnlyList<string> Tumu { get; } = typeof(Izinler)
         .GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)

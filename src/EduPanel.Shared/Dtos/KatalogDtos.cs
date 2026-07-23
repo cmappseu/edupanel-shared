@@ -1,5 +1,12 @@
 namespace EduPanel.Shared.Dtos;
 
+/// <summary>Sayfalı sonuç zarfı: toplam kayıt, geçerli sayfa/boyut ve sayfadaki öğeler.</summary>
+public record SayfaliSonuc<T>(int Toplam, int Sayfa, int Boyut, List<T> Ogeler)
+{
+    /// <summary>Toplam sayfa adedi (en az 1).</summary>
+    public int ToplamSayfa => Boyut <= 0 ? 1 : Math.Max(1, (int)Math.Ceiling(Toplam / (double)Boyut));
+}
+
 // ── Sertifikalandıran kurumlar ──
 public record KurumDto(
     Guid Id, string Ad, string? Birim, string? Telefon, string? Eposta, string? Notlar, int EgitimSayisi);

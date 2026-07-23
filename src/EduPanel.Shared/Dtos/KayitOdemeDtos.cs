@@ -20,18 +20,24 @@ public enum OdemeYontemi
 /// <summary>Başvurudan tek tıkla kayda dönüşüm. Peşinat bugün, kalan eşit taksitlerle planlanır.</summary>
 public record DonusumIstek(
     Guid BasvuruId, string AdSoyad, string? TcNo, string? Eposta,
-    Guid EgitimId, decimal AnlasilanUcret, decimal Pesinat, int TaksitSayisi, DateTime? IlkVade);
+    Guid EgitimId, decimal AnlasilanUcret, decimal Pesinat, int TaksitSayisi, DateTime? IlkVade,
+    DateTime? DogumTarihi = null, string? Il = null, string? KargoAdresi = null, string? EkHizmetler = null);
 
 public record OgrenciDto(
     Guid Id, string AdSoyad, string Telefon, string? TcNo, string? Eposta,
-    int KayitSayisi, decimal ToplamKalan);
+    int KayitSayisi, decimal ToplamKalan,
+    DateTime? DogumTarihi = null, string? Il = null, string? KargoAdresi = null,
+    string? EkHizmetler = null, string? KaydedenAdi = null);
 
-public record OgrenciGuncelleIstek(string AdSoyad, string? TcNo, string? Eposta, string Telefon);
+public record OgrenciGuncelleIstek(
+    string AdSoyad, string? TcNo, string? Eposta, string Telefon,
+    DateTime? DogumTarihi = null, string? Il = null, string? KargoAdresi = null, string? EkHizmetler = null);
 
 public record KayitOzetDto(
     Guid Id, string EgitimAdi, decimal AnlasilanUcret, decimal Odenen, decimal Kalan,
     SertifikaDurumu SertifikaDurumu, bool IptalEdildi, DateTime KayitTarihi,
-    string? BelgeNo = null, DateTime? BelgeVerilis = null, DateTime? BelgeGecerlilikSonu = null);
+    string? BelgeNo = null, DateTime? BelgeVerilis = null, DateTime? BelgeGecerlilikSonu = null,
+    string? KurumAdi = null);
 
 public record OgrenciDetayDto(OgrenciDto Ogrenci, List<KayitOzetDto> Kayitlar);
 
