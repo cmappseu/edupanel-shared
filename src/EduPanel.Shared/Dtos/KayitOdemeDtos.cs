@@ -5,7 +5,10 @@ public enum SertifikaDurumu
     Bekliyor = 0,
     Tamamlandi = 1,
     Basildi = 2,
-    TeslimEdildi = 3
+    TeslimEdildi = 3,
+    // Teslim yöntemine göre ayrım (int olarak saklanır; eski TeslimEdildi=3 korunur).
+    KargoyaVerildi = 4,
+    EldenTeslim = 5
 }
 
 public enum OdemeYontemi
