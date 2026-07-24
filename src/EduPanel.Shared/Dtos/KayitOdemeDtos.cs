@@ -24,7 +24,8 @@ public enum OdemeYontemi
 public record DonusumIstek(
     Guid BasvuruId, string AdSoyad, string? TcNo, string? Eposta,
     Guid EgitimId, decimal AnlasilanUcret, decimal Pesinat, int TaksitSayisi, DateTime? IlkVade,
-    DateTime? DogumTarihi = null, string? Il = null, string? KargoAdresi = null, string? EkHizmetler = null);
+    DateTime? DogumTarihi = null, string? Il = null, string? KargoAdresi = null, string? EkHizmetler = null,
+    string? VeliAdSoyad = null, string? VeliTelefon = null, string? VeliYakinlik = null);
 
 public record OgrenciDto(
     Guid Id, string AdSoyad, string Telefon, string? TcNo, string? Eposta,
