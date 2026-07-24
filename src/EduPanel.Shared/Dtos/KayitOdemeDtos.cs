@@ -44,7 +44,7 @@ public record KayitOzetDto(
     Guid Id, string EgitimAdi, decimal AnlasilanUcret, decimal Odenen, decimal Kalan,
     SertifikaDurumu SertifikaDurumu, bool IptalEdildi, DateTime KayitTarihi,
     string? BelgeNo = null, DateTime? BelgeVerilis = null, DateTime? BelgeGecerlilikSonu = null,
-    string? KurumAdi = null);
+    string? KurumAdi = null, string? KargoTakipNo = null);
 
 public record OgrenciDetayDto(OgrenciDto Ogrenci, List<KayitOzetDto> Kayitlar);
 
@@ -53,7 +53,7 @@ public record YeniKayitIstek(
     Guid OgrenciId, Guid EgitimId, decimal AnlasilanUcret, decimal Pesinat,
     int TaksitSayisi, DateTime? IlkVade);
 
-public record SertifikaGuncelleIstek(SertifikaDurumu Durum);
+public record SertifikaGuncelleIstek(SertifikaDurumu Durum, string? KargoTakipNo = null);
 
 /// <summary>Kesinti boş bırakılırsa kurumun tanımlı iade kesinti yüzdesi uygulanır.</summary>
 public record KayitIptalIstek(string Gerekce, decimal IadeTutari, decimal? Kesinti);
