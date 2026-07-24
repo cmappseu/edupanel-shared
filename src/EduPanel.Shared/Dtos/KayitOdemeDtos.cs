@@ -30,12 +30,14 @@ public record OgrenciDto(
     Guid Id, string AdSoyad, string Telefon, string? TcNo, string? Eposta,
     int KayitSayisi, decimal ToplamKalan,
     DateTime? DogumTarihi = null, string? Il = null, string? KargoAdresi = null,
-    string? EkHizmetler = null, string? KaydedenAdi = null, string? Notlar = null);
+    string? EkHizmetler = null, string? KaydedenAdi = null, string? Notlar = null,
+    string? VeliAdSoyad = null, string? VeliTelefon = null, string? VeliYakinlik = null);
 
 public record OgrenciGuncelleIstek(
     string AdSoyad, string? TcNo, string? Eposta, string Telefon,
     DateTime? DogumTarihi = null, string? Il = null, string? KargoAdresi = null,
-    string? EkHizmetler = null, string? Notlar = null);
+    string? EkHizmetler = null, string? Notlar = null,
+    string? VeliAdSoyad = null, string? VeliTelefon = null, string? VeliYakinlik = null);
 
 public record KayitOzetDto(
     Guid Id, string EgitimAdi, decimal AnlasilanUcret, decimal Odenen, decimal Kalan,
