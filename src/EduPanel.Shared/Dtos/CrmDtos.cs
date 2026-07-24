@@ -50,6 +50,9 @@ public record AtamaIstek(Guid? KullaniciId);
 public record AramaEkleIstek(
     string? Not, BasvuruDurumu YeniDurum, DateTime? TekrarAramaTarihi, Guid? VazgecmeNedeniId);
 
+/// <summary>Hızlı sonraki arama hatırlatması (arama kaydı doldurmadan). Tarih null = hatırlatmayı kaldır.</summary>
+public record HatirlatmaIstek(DateTime? Tarih);
+
 /// <summary>WhatsMod'un webhook'a POST edeceği sözleşme. İmza: HMAC-SHA256(gövde, kurum secret'ı) hex, X-Imza başlığında.</summary>
 public record WhatsModWebhookIstek(
     string Telefon, string? Ad, string Mesaj, string? Hat, string? Kaynak, DateTime? Zaman);
