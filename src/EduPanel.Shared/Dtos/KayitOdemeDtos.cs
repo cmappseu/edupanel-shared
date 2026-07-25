@@ -32,7 +32,8 @@ public record OgrenciDto(
     int KayitSayisi, decimal ToplamKalan,
     DateTime? DogumTarihi = null, string? Il = null, string? KargoAdresi = null,
     string? EkHizmetler = null, string? KaydedenAdi = null, string? Notlar = null,
-    string? VeliAdSoyad = null, string? VeliTelefon = null, string? VeliYakinlik = null);
+    string? VeliAdSoyad = null, string? VeliTelefon = null, string? VeliYakinlik = null,
+    List<EtiketDto>? Etiketler = null);
 
 public record OgrenciGuncelleIstek(
     string AdSoyad, string? TcNo, string? Eposta, string Telefon,
