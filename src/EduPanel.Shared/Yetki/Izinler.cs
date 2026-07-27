@@ -51,6 +51,9 @@ public static class Izinler
     // Kurum ayarları
     public const string AyarlarKurumOzellestir = "Ayarlar.KurumOzellestir";
 
+    // Etiketler (öğrencilere atanan renkli etiketlerin tanım yönetimi)
+    public const string EtiketlerYonet = "Etiketler.Yonet";
+
     // Duyurular (kullanıcılara düşen bildirimler)
     public const string DuyurularYonet = "Duyurular.Yonet";
 
