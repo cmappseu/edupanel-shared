@@ -18,6 +18,8 @@ public static class Izinler
     // Öğrenci ve kayıt
     public const string OgrencilerGoruntule = "Ogrenciler.Goruntule";
     public const string OgrencilerDuzenle = "Ogrenciler.Duzenle";
+    // Öğrenciyi ve ona bağlı tüm verileri (kayıt, taksit, ödeme, iade, etiket, özel alan) siler
+    public const string OgrencilerSil = "Ogrenciler.Sil";
     public const string KayitlarGoruntule = "Kayitlar.Goruntule";
     public const string KayitlarOlustur = "Kayitlar.Olustur";
     public const string KayitlarDuzenle = "Kayitlar.Duzenle";
